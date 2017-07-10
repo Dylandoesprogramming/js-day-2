@@ -191,6 +191,41 @@
         </section>
         <section>
             <div class="section-content">
+                <h2>Constructor Functions</h2>
+                <pre>
+                     <code>
+                        function PersonCreator(someValue) {
+                           this.property = someValue
+                        }
+
+                        var person1 = new PersonCreator(3)
+                        var person2 = new PersonCreator(4)
+                     </code>
+                </pre>
+                <button class="next-button" type="">Next</button>
+            </div>
+        </section>
+        <section>
+            <div class="section-content">
+                <h2>Factory Functions</h2>
+                <pre>
+                     <code>
+                        function objectFactory(someValue) {
+                           return {
+                              property: someValue
+                           }
+                           
+                        }
+
+                        var person1 = objectFactory(3)
+                        var person2 = objectFactory(4)
+                     </code>
+                </pre>
+                <button class="next-button" type="">Next</button>
+            </div>
+        </section>
+        <section>
+            <div class="section-content">
                 <h2>Prototypes</h2>
                 <pre>
                 Array.prototype.myFunction = {
