@@ -115,6 +115,8 @@ pre {
     height: 100%;
     float: left;
     background: #fff;
+    padding: 25px;
+    text-align: center;
 }
 
 .movie-app-movie-list {
@@ -122,12 +124,13 @@ pre {
     height: 100%;
     float: left;
     background: #222;
+    padding: 25px;
+
 }
 
 #movie-search-input {
     width: 90%;
-    width: 0 auto;
-    font-size: .75em;
+    height: 200px;
 }
 
 #movie-search-button {
@@ -145,9 +148,10 @@ pre {
 }
 
 #movie-list li {
-    width: 15vw;
-    height: 20vh;
+    width: 100px;
+    height: 140px;
     padding: .25em; 
     background: #fff;
-    color: #222
+    color: #222;
+    font-size: .75em;
 }
