@@ -1,42 +1,13 @@
-var scrolling = false;
-
-function scrollToY(direction, yPos, increment) {
-    if (yPos < 0) {
-        yPos = 0;
-    } else if (yPos > document.querySelector("body") .scrollHeight - window.innerHeight) {
-        return;
-    }
-    scrolling = true;
-    if (!increment) {
-        increment = (yPos - window.scrollY) / 20.0 
-    }
-    if ((direction === '+' && window.scrollY < yPos) || (direction === '-' && window.scrollY > yPos)) {
-        setTimeout(function() {
-            window.scrollTo(0, window.scrollY + increment);
-            scrollToY(direction, yPos, increment);
-        }, 1);
-    } else {
-        console.log(window.scrollY)
-        scrolling = false;
-    }
+function scrollDown() {
+   window.scrollTo(0, parseInt(window.scrollY / window.innerHeight) * window.innerHeight + window.innerHeight)
 }
-
 document.addEventListener("DOMContentLoaded", function() {
-    // Add listeners for keyup and keydown
-    document.addEventListener('keyup', function(event) {
-        if (!scrolling && event.keyCode === 38) {
-            scrollToY('-', window.scrollY - window.innerHeight + 40)
-        } else if (!scrolling && event.keyCode === 40) {
-            scrollToY('+', window.scrollY + window.innerHeight - 40)
-        }
-    })
-
     // Add event listeners to next buttons
     var nextButtons = document.querySelectorAll(".next-button")
     for (var i = 0; i < nextButtons.length; i++) {
         nextButtons[i].addEventListener('click', function(event) {
             console.log("Clicked")
-            scrollToY('+', parseInt(window.scrollY / window.innerHeight) * window.innerHeight + window.innerHeight - 50)
+            scrollDown()
         })
     }
 
